@@ -1,0 +1,8 @@
+---
+# ansible-playbook playbook.yml
+
+- hosts: all
+  connection: ssh
+  gather_facts: yes
+  roles:
+    - role: dotfiles

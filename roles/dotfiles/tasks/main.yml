@@ -1,0 +1,23 @@
+---
+# tasks file for dotfiles
+
+- name: install git
+  package:
+    name: git
+    state: present
+  become: yes
+
+- name: checkout dotfiles git repo
+  git:
+    repo: "{{ dotfiles_repo }}"
+    dest: ~/dotfiles
+    update: yes
+  become: no
+
+- name: link dotfiles
+  file:
+    src: "~/dotfiles/{{ item }}"
+    dest: "~/{{ item }}"
+    state: link
+  become: no
+  with_items: "{{ dotfiles_files }}"

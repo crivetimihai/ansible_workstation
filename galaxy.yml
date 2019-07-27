@@ -1,0 +1,17 @@
+namespace: "crivetimihai"
+name: "workstation"
+version: "1.0.0"
+readme: "README.md"
+authors:
+  - "Mihai Criveti (https://twitter.com/crivetimihai)"
+description: "Collection of Workstation Tools"
+license:
+  - "MIT"
+tags:
+  - linux
+  - workstation
+  - collection
+repository: "https://www.github.com/crivetimihai/ansible_workstation"
+homepage: "https://www.github.com/crivetimihai/ansible_workstation"
+documentation: "https://www.github.com/crivetimihai/ansible_workstation"
+issues: "https://www.github.com/crivetimihai/ansible_workstation/issues"

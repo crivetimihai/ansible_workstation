@@ -1,0 +1,11 @@
+---
+# defaults file for dotfiles
+
+dotfiles_repo: "https://github.com/crivetimihai/dotfiles.git"
+
+dotfiles_files:
+  - .spacemacs
+  - .tmux.conf.local
+  - .tmux
+  - .SpaceVim.d
+  - .zshrc
