@@ -9,6 +9,7 @@
 
 - name: checkout dotfiles git repo
   git:
+    version: "{{ dotfiles_repo_version }}"
     repo: "{{ dotfiles_repo }}"
     dest: ~/dotfiles
     update: yes
