@@ -1,0 +1,6 @@
+---
+# Profile and customizations
+
+- include: motd.yml         # Customize motd
+- include: issue.yml        # Customize issue
+- include: neofetch.yml     # Add neofetch to login prompt
