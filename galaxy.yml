@@ -1,6 +1,6 @@
 namespace: "crivetimihai"
 name: "workstation"
-version: "1.0.2"
+version: "1.0.3"
 readme: "README.md"
 authors:
   - "Mihai Criveti (https://twitter.com/crivetimihai)"
@@ -11,6 +11,8 @@ tags:
   - linux
   - workstation
   - baseline
+  - profile
+  - dotfiles
   - collection
 repository: "https://www.github.com/crivetimihai/ansible_workstation"
 homepage: "https://www.github.com/crivetimihai/ansible_workstation"
