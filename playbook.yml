@@ -6,3 +6,5 @@
   gather_facts: yes
   roles:
     - role: dotfiles
+    - role: profile
+    - role: packages

@@ -4,6 +4,8 @@ Ansible Workstation Collection
 [Ansible Galaxy Collection: Workstation](https://galaxy.ansible.com/crivetimihai/workstation):
 
 - dotfiles
+- profile
+- packages
 
 Tested on:
 ----------

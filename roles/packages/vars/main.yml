@@ -11,6 +11,8 @@ _packages_prereq:
     - bzip2
   CentOS:
     - epel-release
+  Fedora:
+    - fedora-workstation-repositories
 
 # Base packages
 _packages_base:
@@ -28,10 +30,26 @@ _packages_base:
   CentOS:
     - which
     - xz
+    - tuned
+    - lvm2
+    - vdo
+    - kmod-kvdo
   RedHat:
     - xz
+    - tuned
+    - lvm2
+    - vdo
+    - kmod-kvdo
+    - stratisd
+    - stratis-cli
   Fedora:
     - xz
+    - tuned
+    - lvm2
+    - vdo
+    - kmod-kvdo
+    - stratisd
+    - stratis-cli
   Debian:
     - xz-utils
     - apt-file
@@ -180,10 +198,14 @@ _packages_gui:
     - wireshark
   CentOS:
     - "@^graphical-server-environment"
+    - firewall-config
+    - "system-config-*"
   RedHat:
     - "@^graphical-server-environment"
+    - firewall-config
   Fedora:
     - "@^gnome-desktop-environment"
+    - firewall-config
     - firefox
     - kepassx2
     - remmina
@@ -194,6 +216,16 @@ _packages_gui:
   Ubuntu:
     - unity
     - firefox-esr
+
+# Desktop packages (specific to desktop environments)
+_packages_desktop:
+  all:
+    - figlet
+  Fedora:
+    - wine-fonts
+    - powerline-fonts
+    - flameshot
+    - transmission
 
 packages_prereq: "{{ _packages_prereq['all'] + ( _packages_prereq[ansible_distribution] | default([]) ) }}"
 packages_base: "{{ _packages_base['all'] + ( _packages_base[ansible_distribution] | default([]) ) }}"

@@ -1,0 +1,9 @@
+---
+# vars file for baseline
+
+_sshd_service_name:
+  default: sshd
+  Debian: ssh
+  Ubuntu: ssh
+
+sshd_service_name: "{{ _sshd_service_name[ansible_distribution] | default(_sshd_service_name['default']) }}"

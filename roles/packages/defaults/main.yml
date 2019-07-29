@@ -1,10 +1,10 @@
 ---
 # defaults file for packages
 
-install_prereq: no
-install_base: no
-install_build: no
-install_net: no
-install_clients: no
-install_devel: no
+install_prereq: yes
+install_base: yes
+install_build: yes
+install_net: yes
+install_clients: yes
+install_devel: yes
 install_gui: yes

@@ -1,6 +1,6 @@
 ---
 # tasks file for packages
-- name: test veriables and environment
+- name: assert supported distributions and versions
   assert:
     that:
       - ( ansible_distribution == "RedHat" and ( ansible_distribution_major_version == '8' )
