@@ -1,0 +1,56 @@
+---
+# vars file for packages
+
+_packages:
+  CentOS:
+    - tar
+    - unzip
+    - bzip2
+    - ed
+    - vim
+    - bash-completion
+    - zsh
+    - mc
+    - tmux
+  RedHat:
+    - tar
+    - unzip
+    - bzip2
+    - ed
+    - vim
+    - bash-completion
+    - zsh
+    - mc
+    - tmux
+  Fedora:
+    - tar
+    - unzip
+    - bzip2
+    - ed
+    - vim
+    - bash-completion
+    - zsh
+    - mc
+    - tmux
+  Debian:
+    - tar
+    - unzip
+    - bzip2
+    - ed
+    - vim
+    - bash-completion
+    - zsh
+    - mc
+    - tmux
+  Ubuntu:
+    - tar
+    - unzip
+    - bzip2
+    - ed
+    - vim
+    - bash-completion
+    - zsh
+    - mc
+    - tmux
+
+packages: "{{ _packages[ansible_distribution] }}"
