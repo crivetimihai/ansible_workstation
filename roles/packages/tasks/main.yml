@@ -1,14 +1,57 @@
 ---
 # tasks file for packages
+- name: test veriables and environment
+  assert:
+    that:
+      - ( ansible_distribution == "RedHat" and ( ansible_distribution_major_version == '8' )
+        ) or
+        ( ansible_distribution == "CentOS" and ( ansible_distribution_major_version == "7" )
+        ) or
+        ( ansible_distribution == "Fedora" and ( ansible_distribution_major_version == "30" )
+        ) or
+        ( ansible_distribution == "Debian" and ( ansible_distribution_major_version == "9" or ansible_distribution_major_version == "10" )
+        ) or
+        ( ansible_distribution == "Ubuntu" and ( ansible_distribution_version == "18.04" )
+        )
 
-- debug:
-    var: packages
-
-- debug:
-    var: ansible_distribution
-
-- name: install packages
+- name: install prereq packages
   package:
-    name: "{{ packages }}"
+    name: "{{ packages_prereq }}"
     state: present
   become: yes
+  when: install_prereq
+
+- name: install base packages
+  package:
+    name: "{{ packages_base }}"
+    state: present
+  become: yes
+  when: install_base
+
+- name: install net packages
+  package:
+    name: "{{ packages_net }}"
+    state: present
+  become: yes
+  when: install_net
+
+- name: install build packages
+  package:
+    name: "{{ packages_build }}"
+    state: present
+  become: yes
+  when: install_build
+
+- name: install clients packages
+  package:
+    name: "{{ packages_clients }}"
+    state: present
+  become: yes
+  when: install_clients
+
+- name: install gui packages
+  package:
+    name: "{{ packages_gui }}"
+    state: present
+  become: yes
+  when: install_gui

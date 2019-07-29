@@ -1,56 +1,111 @@
 ---
 # vars file for packages
 
-_packages:
+# Prereq packages
+_packages_prereq:
+  all:
+    - sudo
+    - bash
+    - tar
+    - unzip
+    - bzip2
   CentOS:
-    - tar
-    - unzip
-    - bzip2
-    - ed
-    - vim
-    - bash-completion
-    - zsh
-    - mc
-    - tmux
-  RedHat:
-    - tar
-    - unzip
-    - bzip2
-    - ed
-    - vim
-    - bash-completion
-    - zsh
-    - mc
-    - tmux
-  Fedora:
-    - tar
-    - unzip
-    - bzip2
-    - ed
-    - vim
-    - bash-completion
-    - zsh
-    - mc
-    - tmux
-  Debian:
-    - tar
-    - unzip
-    - bzip2
-    - ed
-    - vim
-    - bash-completion
-    - zsh
-    - mc
-    - tmux
-  Ubuntu:
-    - tar
-    - unzip
-    - bzip2
-    - ed
-    - vim
-    - bash-completion
-    - zsh
-    - mc
-    - tmux
+    - epel-release
 
-packages: "{{ _packages[ansible_distribution] }}"
+# Base packages
+_packages_base:
+  all:
+    - bash-completion
+    - zsh
+    - ed
+    - vim
+    - mc
+    - tmux
+    - bc
+    - less
+    - lsof
+    - sysstat
+  CentOS:
+    - which
+    - xz
+  RedHat:
+    - xz
+  Fedora:
+    - xz
+  Debian:
+    - xz-utils
+    - apt-file
+    - debianutils
+  Ubuntu:
+    - xz-utils
+    - apt-file
+    - debianutils
+
+# Net tools packages
+_packages_net:
+  all:
+    - curl
+    - wget
+    - nmap-ncat
+    - bind-utils
+    - traceroute
+    - net-tools
+
+# Build packages
+_packages_build:
+  all:
+    - git
+    - openssl-devel
+    - elfutils-libelf-devel
+    - ncurses-libs
+    - ncurses-devel
+    - flex
+    - bison
+    - bc
+    - kernel-headers
+    - kernel-devel
+    - gcc
+    - binutils
+    - perl
+    - make
+    - dialog
+    - kexec-tools
+
+# Clients packages
+_packages_clients:
+  all:
+    - rsync
+    - cifs-utils
+    - samba-client
+    - openldap-clients
+    - nfs-utils
+    - openssh-clients
+
+# Devel packages
+_packages_devel:
+  all:
+    - java-11-openjdk
+    - npm
+    - nodejs
+    - rust
+    - cargo
+    - go
+    - ruby
+    - cloc
+
+# GUI packages
+_packages_gui:
+  all:
+    - firefox
+    - wireshark
+    - mediawriter
+    - remmina
+    - kepassx2
+
+packages_prereq: "{{ _packages_prereq['all'] + ( _packages_prereq[ansible_distribution] | default([]) ) }}"
+packages_base: "{{ _packages_base['all'] + ( _packages_base[ansible_distribution] | default([]) ) }}"
+packages_net: "{{ _packages_net['all'] + ( _packages_net[ansible_distribution] | default([]) ) }}"
+packages_build: "{{ _packages_build['all'] + ( _packages_build[ansible_distribution] | default([]) ) }}"
+packages_clients: "{{ _packages_clients['all'] + ( _packages_clients[ansible_distribution] | default([]) ) }}"
+packages_devel: "{{ _packages_devel['all'] + ( _packages_devel[ansible_distribution] | default([]) ) }}"
+packages_gui: "{{ _packages_gui['all'] + ( _packages_gui[ansible_distribution] | default([]) ) }}"
