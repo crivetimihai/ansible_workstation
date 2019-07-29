@@ -1,7 +1,7 @@
 ---
 # vars file for packages
 
-# Prereq packages
+# Prereq packages: they get installed first, so put things like epel-release here
 _packages_prereq:
   all:
     - sudo
@@ -36,25 +36,43 @@ _packages_base:
     - xz-utils
     - apt-file
     - debianutils
+    - command-not-found
   Ubuntu:
     - xz-utils
     - apt-file
     - debianutils
+    - command-not-found
 
 # Net tools packages
 _packages_net:
   all:
     - curl
     - wget
-    - nmap-ncat
-    - bind-utils
     - traceroute
     - net-tools
+    - tcpdump
+  CentOS:
+    - bind-utils
+    - nmap-ncat
+  RedHat:
+    - bind-utils
+    - nmap-ncat
+  Fedora:
+    - bind-utils
+    - nmap-ncat
+  Debian:
+    - dnsutils
+    - ncat
+  Ubuntu:
+    - dnsutils
+    - ncat
+
 
 # Build packages
 _packages_build:
   all:
     - git
+  CentOS:
     - openssl-devel
     - elfutils-libelf-devel
     - ncurses-libs
@@ -70,6 +88,42 @@ _packages_build:
     - make
     - dialog
     - kexec-tools
+  RedHat:
+    - openssl-devel
+    - elfutils-libelf-devel
+    - ncurses-libs
+    - ncurses-devel
+    - flex
+    - bison
+    - bc
+    - kernel-headers
+    - kernel-devel
+    - gcc
+    - binutils
+    - perl
+    - make
+    - dialog
+    - kexec-tools
+  Fedora:
+    - openssl-devel
+    - elfutils-libelf-devel
+    - ncurses-libs
+    - ncurses-devel
+    - flex
+    - bison
+    - bc
+    - kernel-headers
+    - kernel-devel
+    - gcc
+    - binutils
+    - perl
+    - make
+    - dialog
+    - kexec-tools
+  Debian:
+    - build-essential
+  Ubuntu:
+    - build-essential
 
 # Clients packages
 _packages_clients:
@@ -98,9 +152,10 @@ _packages_gui:
   all:
     - firefox
     - wireshark
-    - mediawriter
-    - remmina
+  Fedora:
     - kepassx2
+    - remmina
+    - mediawriter
 
 packages_prereq: "{{ _packages_prereq['all'] + ( _packages_prereq[ansible_distribution] | default([]) ) }}"
 packages_base: "{{ _packages_base['all'] + ( _packages_base[ansible_distribution] | default([]) ) }}"
