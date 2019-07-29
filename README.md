@@ -6,6 +6,7 @@ Ansible Workstation Collection
 - dotfiles
 - profile
 - packages
+- baseline
 
 Tested on:
 ----------
@@ -39,3 +40,6 @@ mazer install crivetimihai.workstation
     - role: crivetimihai.workstation.dotfiles
 ```
 
+# See also:
+
+- [Ansible Virtualization Collection](https://galaxy.ansible.com/crivetimihai/virtualization)
