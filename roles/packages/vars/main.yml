@@ -134,28 +134,66 @@ _packages_clients:
     - openldap-clients
     - nfs-utils
     - openssh-clients
+  CentOS:
+    - openldap-clients
+  RedHat:
+    - openldap-clients
+  Fedora:
+    - openldap-clients
+  Debian:
+    - ldap-utils
+  Ubuntu:
+    - ldap-utils
 
 # Devel packages
 _packages_devel:
   all:
-    - java-11-openjdk
     - npm
     - nodejs
-    - rust
     - cargo
-    - go
     - ruby
     - cloc
+  CentOS:
+    - java-11-openjdk
+    - rust
+    - go
+  RedHat:
+    - java-11-openjdk
+    - rust
+    - go
+  Fedora:
+    - java-11-openjdk
+    - rust
+    - go
+  Debian:
+    - openjdk-11-jdk
+    - rustc
+    - golang
+  Ubuntu:
+    - openjdk-11-jdk
+    - rustc
+    - golang
 
 # GUI packages
 _packages_gui:
   all:
-    - firefox
     - wireshark
+  CentOS:
+    - "@^graphical-server-environment"
+  RedHat:
+    - "@^graphical-server-environment"
   Fedora:
+    - "@^gnome-desktop-environment"
+    - firefox
     - kepassx2
     - remmina
     - mediawriter
+  Debian:
+    - task-gnome-desktop
+    - firefox-esr
+  Ubuntu:
+    - unity
+    - firefox-esr
 
 packages_prereq: "{{ _packages_prereq['all'] + ( _packages_prereq[ansible_distribution] | default([]) ) }}"
 packages_base: "{{ _packages_base['all'] + ( _packages_base[ansible_distribution] | default([]) ) }}"
