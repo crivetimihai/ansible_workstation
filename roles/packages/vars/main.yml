@@ -222,6 +222,7 @@ _packages_desktop:
   all:
     - figlet
   Fedora:
+    - lm_sensors
     - wine-fonts
     - powerline-fonts
     - flameshot
