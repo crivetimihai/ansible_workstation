@@ -7,6 +7,6 @@ dotfiles_repo_version: HEAD
 dotfiles_files:
   - .spacemacs
   - .tmux.conf.local
-  - .tmux
+  - .tmux.conf
   - .SpaceVim.d
   - .zshrc
