@@ -7,6 +7,21 @@
     state: present
   become: yes
 
+- name: download spacevim installer
+  get_url:
+    url: https://spacevim.org/install.sh
+    dest: /tmp/install-spacevim.sh
+    mode: '0777'
+
+- name: install spacevim
+  command: bash /tmp/install-spacevim.sh
+
+- name: checkout spacemacs
+  git:
+    version: "HEAD"
+    repo: https://github.com/syl20bnr/spacemacs
+    dest: ~/.emacs.d
+
 - name: checkout dotfiles git repo
   git:
     version: "{{ dotfiles_repo_version }}"
