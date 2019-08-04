@@ -16,9 +16,6 @@ platforms:
     pre_build_image: False
     volume_mounts:
       - "/sys/fs/cgroup:/sys/fs/cgroup:rw"
-    tmpfs:
-      - /run
-      - /tmp
     command: "/usr/sbin/init"
     environment:
       container: docker

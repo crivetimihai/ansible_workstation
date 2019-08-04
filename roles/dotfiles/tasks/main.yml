@@ -12,9 +12,11 @@
     url: https://spacevim.org/install.sh
     dest: /tmp/install-spacevim.sh
     mode: '0777'
+  become: no
 
 - name: install spacevim
-  command: bash /tmp/install-spacevim.sh
+  command: /tmp/install-spacevim.sh
+  become: no
 
 - name: checkout spacemacs
   git:
