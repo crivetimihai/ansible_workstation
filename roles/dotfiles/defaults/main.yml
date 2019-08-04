@@ -10,3 +10,4 @@ dotfiles_files:
   - .tmux.conf
   - .SpaceVim.d
   - .zshrc
+  - .rpmmacros

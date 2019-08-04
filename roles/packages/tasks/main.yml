@@ -49,6 +49,13 @@
   become: yes
   when: install_clients
 
+- name: install devel packages
+  package:
+    name: "{{ packages_devel }}"
+    state: present
+  become: yes
+  when: install_devel
+
 - name: install gui packages
   package:
     name: "{{ packages_gui }}"

@@ -175,14 +175,20 @@ _packages_devel:
     - java-11-openjdk
     - rust
     - go
+    - rpm-build
+    - rpmdevtools
   RedHat:
     - java-11-openjdk
     - rust
     - go
+    - rpm-build
+    - rpmdevtools
   Fedora:
     - java-11-openjdk
     - rust
     - go
+    - rpm-build
+    - rpmdevtools
   Debian:
     - openjdk-11-jdk
     - rustc
