@@ -7,6 +7,12 @@
     state: present
   become: yes
 
+- name: install antigen
+  get_url:
+    url: http://git.io/antigen
+    dest: "$HOME/antigen.zsh"
+  become: no
+
 - name: download spacevim installer
   get_url:
     url: https://spacevim.org/install.sh
