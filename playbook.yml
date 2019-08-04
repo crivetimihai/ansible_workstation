@@ -8,3 +8,4 @@
     - role: dotfiles
     - role: profile
     - role: packages
+    - role: baseline

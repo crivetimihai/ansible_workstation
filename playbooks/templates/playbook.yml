@@ -1,0 +1,11 @@
+---
+# ansible-playbook playbook.yml
+
+- hosts: all
+  connection: ssh
+  gather_facts: yes
+  roles:
+    - role: crivetimihai.workstation.dotfiles
+    - role: crivetimihai.workstation.profile
+    - role: crivetimihai.workstation.packages
+    - role: crivetimihai.workstation.baseline
