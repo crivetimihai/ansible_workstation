@@ -62,3 +62,17 @@
     state: present
   become: yes
   when: install_gui
+
+- name: install desktop packages
+  package:
+    name: "{{ packages_desktop }}"
+    state: present
+  become: yes
+  when: install_desktop
+
+- name: update packages
+  package:
+    name: '*'
+    state: latest
+  become: yes
+  when: update_packages

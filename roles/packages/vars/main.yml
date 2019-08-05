@@ -22,6 +22,7 @@ _packages_base:
     - ed
     - vim
     - mc
+    - aspell-en
     - tmux
     - bc
     - less
@@ -241,3 +242,4 @@ packages_build: "{{ _packages_build['all'] + ( _packages_build[ansible_distribut
 packages_clients: "{{ _packages_clients['all'] + ( _packages_clients[ansible_distribution] | default([]) ) }}"
 packages_devel: "{{ _packages_devel['all'] + ( _packages_devel[ansible_distribution] | default([]) ) }}"
 packages_gui: "{{ _packages_gui['all'] + ( _packages_gui[ansible_distribution] | default([]) ) }}"
+packages_desktop: "{{ _packages_desktop['all'] + ( _packages_desktop[ansible_distribution] | default([]) ) }}"

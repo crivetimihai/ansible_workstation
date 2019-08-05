@@ -7,4 +7,6 @@ install_build: yes
 install_net: yes
 install_clients: yes
 install_devel: yes
-install_gui: yes
+install_gui: no
+install_desktop: no
+update_packages: yes
