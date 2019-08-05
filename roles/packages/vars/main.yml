@@ -26,8 +26,6 @@ _packages_base:
     - tmux
     - bc
     - less
-    - lsof
-    - sysstat
   CentOS:
     - which
     - xz
@@ -61,6 +59,15 @@ _packages_base:
     - apt-file
     - debianutils
     - command-not-found
+
+# Packages tools
+_packages_tools:
+  all:
+    - lsof
+    - sysstat
+    - htop
+    - strace
+    - iotop
 
 # Net tools packages
 _packages_net:
@@ -238,6 +245,7 @@ _packages_desktop:
 packages_prereq: "{{ _packages_prereq['all'] + ( _packages_prereq[ansible_distribution] | default([]) ) }}"
 packages_base: "{{ _packages_base['all'] + ( _packages_base[ansible_distribution] | default([]) ) }}"
 packages_net: "{{ _packages_net['all'] + ( _packages_net[ansible_distribution] | default([]) ) }}"
+packages_tools: "{{ _packages_tools['all'] + ( _packages_tools[ansible_distribution] | default([]) ) }}"
 packages_build: "{{ _packages_build['all'] + ( _packages_build[ansible_distribution] | default([]) ) }}"
 packages_clients: "{{ _packages_clients['all'] + ( _packages_clients[ansible_distribution] | default([]) ) }}"
 packages_devel: "{{ _packages_devel['all'] + ( _packages_devel[ansible_distribution] | default([]) ) }}"

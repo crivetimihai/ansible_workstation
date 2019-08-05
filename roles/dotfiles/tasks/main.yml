@@ -34,13 +34,13 @@
   git:
     version: "{{ dotfiles_repo_version }}"
     repo: "{{ dotfiles_repo }}"
-    dest: ~/dotfiles
+    dest: "{{ dotfiles_path }}"
     update: yes
   become: no
 
 - name: link dotfiles
   file:
-    src: "~/dotfiles/{{ item }}"
+    src: "{{ dotfiles_path}}/{{ item }}"
     dest: "~/{{ item }}"
     state: link
   become: no

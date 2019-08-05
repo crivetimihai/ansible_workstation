@@ -28,6 +28,13 @@
   become: yes
   when: install_base
 
+- name: install tools packages
+  package:
+    name: "{{ packages_tools }}"
+    state: present
+  become: yes
+  when: install_tools
+
 - name: install net packages
   package:
     name: "{{ packages_net }}"

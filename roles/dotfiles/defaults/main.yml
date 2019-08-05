@@ -3,6 +3,7 @@
 
 dotfiles_repo: "https://github.com/crivetimihai/dotfiles.git"
 dotfiles_repo_version: HEAD
+dotfiles_path: ~/.dotfiles
 
 dotfiles_files:
   - .spacemacs
