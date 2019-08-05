@@ -4,6 +4,7 @@
 dotfiles_repo: "https://github.com/crivetimihai/dotfiles.git"
 dotfiles_repo_version: HEAD
 dotfiles_path: ~/.dotfiles
+spacemacs_version: "v0.200.13"
 
 dotfiles_files:
   - .spacemacs
@@ -12,4 +13,3 @@ dotfiles_files:
   - .SpaceVim.d
   - .zshrc
   - .rpmmacros
-  - .gitconfig

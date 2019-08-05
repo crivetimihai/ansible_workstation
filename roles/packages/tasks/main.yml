@@ -80,6 +80,6 @@
 - name: update packages
   package:
     name: '*'
-    state: latest
+    state: latest # noqa 403
   become: yes
   when: update_packages

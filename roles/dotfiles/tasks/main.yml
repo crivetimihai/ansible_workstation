@@ -22,13 +22,17 @@
 
 - name: install spacevim
   command: /tmp/install-spacevim.sh
+  args:
+    creates: ~/.SpaceVim
   become: no
 
 - name: checkout spacemacs
   git:
-    version: "HEAD"
     repo: https://github.com/syl20bnr/spacemacs
-    dest: ~/.emacs.d
+    dest: "~/.emacs.d"
+    version: "{{ spacemacs_version }}"
+    update: yes
+  become: no
 
 - name: checkout dotfiles git repo
   git:
@@ -40,7 +44,7 @@
 
 - name: link dotfiles
   file:
-    src: "{{ dotfiles_path}}/{{ item }}"
+    src: "{{ dotfiles_path }}/{{ item }}"
     dest: "~/{{ item }}"
     state: link
   become: no
