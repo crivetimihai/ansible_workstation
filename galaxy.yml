@@ -13,6 +13,8 @@ tags:
   - baseline
   - profile
   - dotfiles
+  - micro
+  - pip
   - collection
 repository: "https://www.github.com/crivetimihai/ansible_workstation"
 homepage: "https://www.github.com/crivetimihai/ansible_workstation"

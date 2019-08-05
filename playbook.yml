@@ -10,3 +10,4 @@
     - role: packages
     - role: baseline
     - role: micro
+    - role: pip
