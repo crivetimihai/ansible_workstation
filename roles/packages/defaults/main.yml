@@ -10,4 +10,5 @@ install_clients: yes
 install_devel: yes
 install_gui: no
 install_desktop: no
+install_latex: yes
 update_packages: yes

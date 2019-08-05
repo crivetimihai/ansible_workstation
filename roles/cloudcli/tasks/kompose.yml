@@ -1,0 +1,9 @@
+---
+# Install Kubernetes Kompose (docker-compose)
+
+- name: download and install kompose
+  get_url:
+    url: https://github.com/kubernetes/kompose/releases/download/v1.18.0/kompose-linux-amd64
+    dest: /usr/local/bin/kompose
+    mode: "1777"
+  become: yes

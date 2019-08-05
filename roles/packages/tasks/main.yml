@@ -77,6 +77,13 @@
   become: yes
   when: install_desktop
 
+- name: install latex packages
+  package:
+    name: "{{ packages_latex }}"
+    state: present
+  become: yes
+  when: install_latex
+
 - name: update packages
   package:
     name: '*'

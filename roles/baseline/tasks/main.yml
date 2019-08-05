@@ -14,4 +14,5 @@
         ( ansible_distribution == "Ubuntu" and ( ansible_distribution_version == "18.04" )
         )
 
-- include: sshd.yml    # Include sshd
+- include: epel.yml    # Include epel
+- include: pip.yml     # Install pip

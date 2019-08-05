@@ -243,6 +243,13 @@ _packages_desktop:
     - flameshot
     - transmission
 
+# LaTeX packages
+_packages_latex:
+  all:
+    - texlive
+  Fedora:
+    - texlive-beamertheme-metropolis
+
 packages_prereq: "{{ _packages_prereq['all'] + ( _packages_prereq[ansible_distribution] | default([]) ) }}"
 packages_base: "{{ _packages_base['all'] + ( _packages_base[ansible_distribution] | default([]) ) }}"
 packages_net: "{{ _packages_net['all'] + ( _packages_net[ansible_distribution] | default([]) ) }}"
@@ -252,3 +259,4 @@ packages_clients: "{{ _packages_clients['all'] + ( _packages_clients[ansible_dis
 packages_devel: "{{ _packages_devel['all'] + ( _packages_devel[ansible_distribution] | default([]) ) }}"
 packages_gui: "{{ _packages_gui['all'] + ( _packages_gui[ansible_distribution] | default([]) ) }}"
 packages_desktop: "{{ _packages_desktop['all'] + ( _packages_desktop[ansible_distribution] | default([]) ) }}"
+packages_latex: "{{ _packages_latex['all'] + ( _packages_latex[ansible_distribution] | default([]) ) }}"

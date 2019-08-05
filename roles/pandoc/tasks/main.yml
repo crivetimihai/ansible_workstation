@@ -1,0 +1,22 @@
+---
+# tasks file for pandoc
+
+- name: download pandoc
+  get_url:
+    url: " {{ pandoc_url }}"
+    dest: /tmp/pandoc.tar.gz
+    checksum: "sha256:{{ pandoc_sha256 }}"
+
+- name: unpack pandoc
+  unarchive:
+    src: /tmp/pandoc.tar.gz
+    dest: /usr/local
+    extra_opts:
+      - --strip=1
+    remote_src: yes
+  become: yes
+
+- name: delete pandoc tarball
+  file:
+    path: /tmp/pandoc.tar.gz
+    state: absent

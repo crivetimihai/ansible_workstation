@@ -1,0 +1,9 @@
+---
+# Install AWS cli
+
+- name: install awscli as regular user using pip
+  pip:
+    executable: pip
+    name: awscli
+    state: present
+  become: no

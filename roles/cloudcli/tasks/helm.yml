@@ -1,0 +1,21 @@
+---
+
+- name: install openssl and which
+  package:
+    name:
+      - openssl
+      - which
+    state: present
+  become: yes
+
+- name: download get_helm.sh
+  get_url:
+    url: https://git.io/get_helm.sh
+    dest: /tmp/get_helm.sh
+    mode: "1777"
+
+- name: install helm
+  command: /tmp/get_helm.sh
+  args:
+    creates: /usr/local/bin/helm
+  become: no

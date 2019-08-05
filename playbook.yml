@@ -5,9 +5,13 @@
   connection: local
   gather_facts: yes
   roles:
-    - role: dotfiles
-    - role: profile
-    - role: packages
     - role: baseline
+    - role: packages
     - role: micro
+    - role: pandoc
+    - role: cloudcli
+    - role: profile
+    - role: dotfiles
+    - role: flatpak
     - role: pip
+    - role: secure

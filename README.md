@@ -3,12 +3,17 @@ Ansible Workstation Collection
 
 [Ansible Galaxy Collection: Workstation](https://galaxy.ansible.com/crivetimihai/workstation):
 
+- baseline: install baseline (epel for CentOS, python2-pip) as required by other roles
+- cloudcli - install various cloud CLIs (aws, helm, azure, oc, kubectl, ibmcloud, etc.)
 - dotfiles - download and link dotfiles from git repo
-- profile - setup profile, motd
-- packages - install various packages
+- flatpak - install and configure flatpaks
 - baseline - baseline configuration (ex: sshd_config)
 - micro - setup micro editor
+- packages - install various packages
+- pandoc - install pandoc
 - pip - install various python modules from pip
+- profile - setup profile, motd
+- secure - secure the system (ex: sshd_config PermitRootLogin no)
 
 Tested on:
 ----------

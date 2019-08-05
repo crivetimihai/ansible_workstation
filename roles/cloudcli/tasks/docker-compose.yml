@@ -1,0 +1,9 @@
+---
+# Install docker-compose
+
+- name: install docker-compose as a regular user using pip
+  pip:
+    executable: pip
+    name: docker-compose
+    state: present
+  become: no

@@ -1,0 +1,21 @@
+---
+# Configure flatpak
+
+- name: Add the flathub flatpak repository remote to the user installation
+  flatpak_remote:
+    name: flathub
+    state: present
+    flatpakrepo_url: "{{ item }}"
+    method: user
+  become: no
+  with_items:
+    - "{{ flatpak_repos }}"
+
+- name: install packages for current user
+  flatpak:
+    name: "{{ item }}"
+    state: present
+    method: user
+  become: no
+  with_items:
+    - "{{ flatpak_packages }}"

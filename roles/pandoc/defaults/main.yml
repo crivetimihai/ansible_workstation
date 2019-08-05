@@ -1,0 +1,7 @@
+---
+# defaults file for pandoc
+
+pandoc_release: 2.7.3
+pandoc_platform: linux
+pandoc_url: https://github.com/jgm/pandoc/releases/download/{{ pandoc_release }}/pandoc-{{ pandoc_release }}-{{ pandoc_platform }}.tar.gz
+pandoc_sha256: eb775fd42ec50329004d00f0c9b13076e707cdd44745517c8ce2581fb8abdb75

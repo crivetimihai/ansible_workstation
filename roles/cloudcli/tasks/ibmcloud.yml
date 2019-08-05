@@ -1,0 +1,11 @@
+---
+- name: download IBM cloud cli
+  get_url:
+    url: https://ibm.biz/idt-installer
+    dest: /tmp/idt-installer
+    mode: "1777"
+
+- name: install IBM cloud cli
+  command: /tmp/idt-installer
+  args:
+    creates: /usr/local/bin/ibmcloud

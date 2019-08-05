@@ -1,0 +1,7 @@
+---
+- name: install python2-pip
+  package:
+    name: python2-pip
+    state: present
+  become: yes
+  when: ansible_distribution == "CentOS"

@@ -1,0 +1,17 @@
+# Molecule managed
+---
+file:
+  /usr/bin/pandoc:
+    exists: true
+    owner: root
+    group: root
+
+command:
+  help:
+    exit-status: 0
+    exec: "pandoc --help"
+    stdout:
+      - "/pandoc/"
+    stderr: []
+    timeout: 10000      # in milliseconds
+    skip: false
