@@ -6,6 +6,7 @@
   gather_facts: yes
   roles:
     - role: dotfiles
-      #    - role: profile
-      #    - role: packages
-      #    - role: baseline
+    - role: profile
+    - role: packages
+    - role: baseline
+    - role: micro
