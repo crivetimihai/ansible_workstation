@@ -99,6 +99,7 @@ _packages_build:
   all:
     - git
   CentOS:
+    - python36-devel
     - openssl-devel
     - elfutils-libelf-devel
     - ncurses-libs

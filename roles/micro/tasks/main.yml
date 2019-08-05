@@ -1,0 +1,24 @@
+---
+# tasks file for micro
+
+- name: download micro
+  get_url:
+    url: " {{ micro_url }}"
+    dest: /tmp/micro.tar.gz
+    checksum: "sha256:{{ micro_sha256 }}"
+
+- name: unpack micro
+  unarchive:
+    src: /tmp/micro.tar.gz
+    dest: /usr/local/bin
+    extra_opts:
+      - --strip=1
+      - --wildcards
+      - '*/micro'
+    remote_src: yes
+  become: yes
+
+- name: delete micro tarball
+  file:
+    path: /tmp/micro.tar.gz
+    state: absent

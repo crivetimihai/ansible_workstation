@@ -1,0 +1,7 @@
+---
+# defaults file for micro
+
+micro_release: 1.4.1
+micro_platform: linux64
+micro_url: https://github.com/zyedidia/micro/releases/download/v{{ micro_release }}/micro-{{ micro_release }}-{{ micro_platform }}.tar.gz
+micro_sha256: e7d4c9427f9fdfed78e69d42cf518e93ae15fc8f70b7f0f87d292ed81206e900
