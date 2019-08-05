@@ -32,5 +32,4 @@ galaxy_info:
     - centos
     - fedora
 
-dependencies:
-  - role: baseline
+# dependencies: []
