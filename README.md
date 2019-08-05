@@ -3,10 +3,12 @@ Ansible Workstation Collection
 
 [Ansible Galaxy Collection: Workstation](https://galaxy.ansible.com/crivetimihai/workstation):
 
-- dotfiles
-- profile
-- packages
-- baseline
+- dotfiles - download and link dotfiles from git repo
+- profile - setup profile, motd
+- packages - install various packages
+- baseline - baseline configuration (ex: sshd_config)
+- micro - setup micro editor
+- pip - install various python modules from pip
 
 Tested on:
 ----------

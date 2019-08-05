@@ -1,0 +1,11 @@
+---
+# tasks file for pip
+
+- name: install pip modules
+  pip:
+    name:
+      - ansible
+      - ansible-lint
+      - yamllint
+      - mazer
+  become: no
