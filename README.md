@@ -3,9 +3,7 @@ Ansible Workstation Collection
 
 [Ansible Galaxy Collection: Workstation](https://galaxy.ansible.com/crivetimihai/workstation):
 
-- anaconda: install anaconda (miniconda) and various packages from conda / pip
 - baseline: install baseline (epel for CentOS, python2-pip) as required by other roles
-- cloudcli - install various cloud CLIs (aws, helm, azure, oc, kubectl, ibmcloud, etc.)
 - dotfiles - download and link dotfiles from git repo
 - flatpak - install and configure flatpaks
 - baseline - baseline configuration (ex: sshd_config)
