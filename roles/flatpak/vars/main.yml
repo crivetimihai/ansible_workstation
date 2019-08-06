@@ -9,11 +9,3 @@ _packages:
     - "flatpak"
 
 packages: "{{ _packages['all'] + ( _packages[ansible_distribution] | default([]) ) }}"
-
-# Flatpacks to install
-flatpak_repos:
-  - https://dl.flathub.org/repo/flathub.flatpakrepo
-
-flatpak_packages:
-  - org.gnu.emacs
-  - io.neovim.nvim

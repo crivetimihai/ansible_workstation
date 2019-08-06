@@ -1,2 +1,15 @@
 ---
 # defaults file for flatpak
+
+# Flatpacks repos
+flatpak_repos:
+  - https://dl.flathub.org/repo/flathub.flatpakrepo
+
+# Packages to install
+flatpak_packages:
+  - org.gnu.emacs
+  - io.neovim.nvim
+  - com.visualstudio.code
+  - com.slack.Slack
+  - com.wps.Office
+  - com.skype.Client
