@@ -1,0 +1,31 @@
+---
+dependency:
+  name: galaxy
+  role-file: requirements.yml
+driver:
+  name: vagrant
+  provider:
+    name: virtualbox
+lint:
+  name: yamllint
+platforms:
+  - name: anaconda-centos-7
+    box: centos/7
+provisioner:
+  name: ansible
+  config_options:
+    defaults:
+      stdout_callback: debug
+  log: True
+  playbooks:
+    vagrant:
+      prepare: ../resources/playbooks/prepare.yml
+    converge: ../resources/playbooks/playbook.yml
+    verify: ../resources/playbooks/verify.yml
+  lint:
+    name: ansible-lint
+verifier:
+  name: goss
+  directory: ../resources/tests
+  lint:
+    name: yamllint

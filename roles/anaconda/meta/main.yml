@@ -1,7 +1,7 @@
 ---
 galaxy_info:
   author: Mihai Criveti
-  description: Cloudcli
+  description: Anaconda
   company: Mihai Criveti
   license: MIT
   min_ansible_version: 2.4
@@ -32,5 +32,4 @@ galaxy_info:
     - centos
     - fedora
 
-dependencies:
-  - role: baseline
+# dependencies: []
