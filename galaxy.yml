@@ -15,6 +15,7 @@ tags:
   - dotfiles
   - micro
   - pip
+  - anaconda
   - collection
 repository: "https://www.github.com/crivetimihai/ansible_workstation"
 homepage: "https://www.github.com/crivetimihai/ansible_workstation"

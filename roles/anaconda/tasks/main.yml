@@ -15,6 +15,12 @@
         ( ansible_distribution == "Ubuntu" and ( ansible_distribution_version == "18.04" )
         )
 
+- name: install OS packages
+  package:
+    name: "{{ os_packages }}"
+    state: present
+  become: yes
+
 - name: download Anaconda
   get_url:
     url: "{{ anaconda_url }}"
@@ -36,3 +42,8 @@
   command: "{{ anaconda_path }}/bin/pip install --upgrade --user {{ item }}"    # noqa 301
   with_items:
     - "{{ pip_packages }}"
+
+- name: install pip ansible packages
+  command: "{{ anaconda_path }}/bin/pip install --upgrade --user {{ item }}"    # noqa 301
+  with_items:
+    - "{{ pip_ansible_packages }}"
