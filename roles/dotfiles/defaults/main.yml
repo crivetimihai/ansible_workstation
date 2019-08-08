@@ -13,3 +13,6 @@ dotfiles_files:
   - .SpaceVim.d
   - .zshrc
   - .rpmmacros
+
+dotfiles_copy:
+  - .zshrc.local
