@@ -71,6 +71,16 @@ _packages_tools:
     - htop
     - strace
     - iotop
+    - mosh
+    - lynis
+  CentOS:
+    - openscap
+  RedHat:
+    - openscap
+  Debian:
+    - ssg-debian
+  Ubuntu:
+    - ssg-debderived
 
 # Net tools packages
 _packages_net:

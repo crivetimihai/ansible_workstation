@@ -46,6 +46,12 @@ mazer install crivetimihai.workstation
     - role: crivetimihai.workstation.dotfiles
 ```
 
+### Running a single role:
+
+```
+ansible localhost -m include_role -a 'name=secure'
+```
+
 # See also:
 
 - [Ansible Virtualization Collection](https://galaxy.ansible.com/crivetimihai/virtualization)

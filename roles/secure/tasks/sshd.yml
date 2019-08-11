@@ -5,16 +5,24 @@
     state: present
   become: yes
 
-- name: Configure SSH daemon.
+- name: Configure SSH daemon to disable RootLogin, DNS, GSSAPI, ChallangeResponse, Kerberos
   lineinfile:
     dest: /etc/ssh/sshd_config
     regexp: "{{ item.regexp }}"
     line: "{{ item.line }}"
     state: present
   with_items:
-    - { regexp: '^PermitRootLogin', line: 'PermitRootLogin no' }
-    - { regexp: '^UseDNS', line: 'UseDNS no' }
-    - { regexp: '^GSSAPIAuthentication', line: 'GSSAPIAuthentication no' }
-    - { regexp: '^AddressFamily', line: 'AddressFamily inet' }
+    - { regexp: 'PermitRootLogin', line: 'PermitRootLogin no' }
+    - { regexp: 'UseDNS', line: 'UseDNS no' }
+    - { regexp: 'PermitEmptyPasswords', line: 'PermitEmptyPasswords no' }
+    - { regexp: 'GSSAPIAuthentication', line: 'GSSAPIAuthentication no' }
+    - { regexp: 'ChallengeResponseAuthentication', line: 'ChallengeResponseAuthentication no' }
+    - { regexp: 'KerberosAuthentication', line: 'KerberosAuthentication no' }
+    - { regexp: 'IgnoreRhosts', line: 'IgnoreRhosts yes' }
+    - { regexp: 'X11Forwarding', line: 'X11Forwarding no' }
+    - { regexp: 'RhostsRSAAuthentication', line: 'RhostsRSAAuthentication no' }
+    - { regexp: 'HostbasedAuthentication', line: 'HostbasedAuthentication no' }
+    - { regexp: 'AddressFamily', line: 'AddressFamily inet' }
+    - { regexp: 'sftp-server', line: '# Subsystem   sftp    /usr/libexec/openssh/sftp-server' }
   notify: restart sshd
   become: yes
