@@ -9,7 +9,9 @@
 
 - name: install npm modules
   npm:
-    name: terminalizer
+    name: "{{ item }}"
     state: present
+    path: "{{ npm_path }}"
     global: no
   become: no
+  with_items: "{{ npm_packages }}"
