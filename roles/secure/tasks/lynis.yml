@@ -1,2 +1,8 @@
 ---
 # Run lynis scan
+
+- name: run a lynis scan
+  command: lynis audit system -Q
+  args:
+    creates: /var/log/lynis.log
+  become: yes

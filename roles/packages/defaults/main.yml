@@ -1,6 +1,7 @@
 ---
 # defaults file for packages
 
+uninstall_packages: yes
 install_prereq: yes
 install_base: yes
 install_build: yes

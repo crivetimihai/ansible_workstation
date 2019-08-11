@@ -13,7 +13,7 @@
     content: ""
     dest: ~/.ssh/config
     force: no
-    mode: '0700'
+    mode: '0600'
   become: no
 
 - name: Configure SSH client

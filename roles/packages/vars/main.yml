@@ -1,6 +1,17 @@
 ---
 # vars file for packages
 
+# Remove packages: uninstall if found
+_packages_remove:
+  all:
+    - screen
+  CentOS:
+    - abrt
+  Fedora:
+    - abrt
+  RedHat:
+    - abrt
+
 # Prereq packages: they get installed first, so put things like epel-release here
 _packages_prereq:
   all:
@@ -26,6 +37,7 @@ _packages_base:
     - tmux
     - bc
     - less
+    - autofs
   CentOS:
     - which
     - xz
@@ -75,8 +87,12 @@ _packages_tools:
     - lynis
   CentOS:
     - openscap
+    - openscap-scanner
+    - scap-security-guide
   RedHat:
     - openscap
+    - openscap-scanner
+    - scap-security-guide
   Debian:
     - ssg-debian
   Ubuntu:
@@ -90,6 +106,7 @@ _packages_net:
     - traceroute
     - net-tools
     - tcpdump
+    - nethogs
   CentOS:
     - bind-utils
     - nmap-ncat
@@ -267,6 +284,7 @@ _packages_latex:
   Fedora:
     - texlive-beamertheme-metropolis
 
+packages_remove: "{{ _packages_remove['all'] + ( _packages_remove[ansible_distribution] | default([]) ) }}"
 packages_prereq: "{{ _packages_prereq['all'] + ( _packages_prereq[ansible_distribution] | default([]) ) }}"
 packages_base: "{{ _packages_base['all'] + ( _packages_base[ansible_distribution] | default([]) ) }}"
 packages_net: "{{ _packages_net['all'] + ( _packages_net[ansible_distribution] | default([]) ) }}"

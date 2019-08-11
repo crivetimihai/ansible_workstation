@@ -90,3 +90,10 @@
     state: latest           # noqa 403
   become: yes
   when: update_packages
+
+- name: remove packages
+  package:
+    name: "{{ packages_remove }}"
+    state: absent
+  become: yes
+  when: uninstall_packages

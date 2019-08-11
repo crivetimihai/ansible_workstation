@@ -1,0 +1,11 @@
+---
+# Run lynis scan
+
+- name: run a lynis scan
+  command: oscap xccdf eval --profile xccdf_org.ssgproject.content_profile_rht-ccp --results-arf /tmp/arf.xml --report /tmp/report.html /usr/share/xml/scap/ssg/content/ssg-centos7-ds.xml
+  creates: /tmp/report.html
+  become: yes
+
+- name: generate ansible fix
+  command: oscap xccdf generate fix --fix-type ansible --result-id xccdf_org.ssgproject.content_profile_rht-ccp --output /tmp/scap-playbook-result.yml /tmp/arf.xml
+  become: yes

@@ -17,3 +17,4 @@
 
 - include: sshd.yml
 - include: ssh.yml
+- include: lynis.yml
