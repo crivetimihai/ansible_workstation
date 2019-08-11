@@ -1,2 +1,7 @@
 ---
 # defaults file for pip
+
+pip_packages:
+  - setuptools
+  - ansible
+  - ansible-lint

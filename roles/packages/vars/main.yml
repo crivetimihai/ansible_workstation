@@ -33,6 +33,7 @@ _packages_base:
     - lvm2
     - vdo
     - kmod-kvdo
+    - tuned
   RedHat:
     - xz
     - tuned
@@ -41,6 +42,7 @@ _packages_base:
     - kmod-kvdo
     - stratisd
     - stratis-cli
+    - tuned
   Fedora:
     - xz
     - tuned
@@ -49,6 +51,7 @@ _packages_base:
     - kmod-kvdo
     - stratisd
     - stratis-cli
+    - tuned
   Debian:
     - xz-utils
     - apt-file
@@ -242,6 +245,8 @@ _packages_desktop:
     - powerline-fonts
     - flameshot
     - transmission
+    - obs-studio
+    - google-chrome-stable
 
 # LaTeX packages
 _packages_latex:

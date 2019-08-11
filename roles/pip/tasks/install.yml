@@ -3,9 +3,7 @@
 
 - name: install pip modules
   pip:
-    name:
-      - ansible
-      - ansible-lint
-      - yamllint
-      - mazer
+    executable: pip
+    name: "{{ pip_packages }}"
+    extra_args: --user --upgrade
   become: no
