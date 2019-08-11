@@ -1,0 +1,8 @@
+---
+# defaults file for npm
+
+npm_path: ~/node_modules
+
+npm_packages:
+  - terminalizer
+  - ssh-perf

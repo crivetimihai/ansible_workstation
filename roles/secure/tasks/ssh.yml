@@ -1,2 +1,28 @@
 ---
-# Configure ssh client
+# configure ssh client
+
+- name: Ensure ~/.ssh directory exists
+  file:
+    name: ~/.ssh
+    state: directory
+    mode: '0700'
+  become: no
+
+- name: ensure ~/.ssh/config file exists
+  copy:
+    content: ""
+    dest: ~/.ssh/config
+    force: no
+    mode: '0700'
+  become: no
+
+- name: Configure SSH client
+  lineinfile:
+    dest: ~/.ssh/config
+    regexp: "{{ item.regexp }}"
+    line: "{{ item.line }}"
+    state: present
+  with_items:
+    - { regexp: 'ServerAliveInterval', line: 'ServerAliveInterval 50' }
+    - { regexp: 'Compression', line: 'Compression yes' }
+  become: no

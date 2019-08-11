@@ -93,19 +93,21 @@ _packages_net:
   CentOS:
     - bind-utils
     - nmap-ncat
+    - NetworkManager-tui
   RedHat:
     - bind-utils
     - nmap-ncat
+    - NetworkManager-tui
   Fedora:
     - bind-utils
     - nmap-ncat
+    - NetworkManager-tui
   Debian:
     - dnsutils
     - ncat
   Ubuntu:
     - dnsutils
     - ncat
-
 
 # Build packages
 _packages_build:

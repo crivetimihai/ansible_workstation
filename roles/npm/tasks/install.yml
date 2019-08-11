@@ -1,0 +1,15 @@
+---
+# tasks file for packages
+
+- name: install npm package
+  package:
+    name: "{{ packages }}"
+    state: present
+  become: yes
+
+- name: install npm modules
+  npm:
+    name: terminalizer
+    state: present
+    global: no
+  become: no

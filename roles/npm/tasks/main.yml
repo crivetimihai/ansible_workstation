@@ -1,5 +1,5 @@
 ---
-# tasks file for secure
+# tasks file for npm
 
 - name: assert supported distributions and versions
   assert:
@@ -15,5 +15,4 @@
         ( ansible_distribution == "Ubuntu" and ( ansible_distribution_version == "18.04" )
         )
 
-- include: sshd.yml
-- include: ssh.yml
+- include: install.yml
