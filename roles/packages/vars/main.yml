@@ -281,6 +281,9 @@ _packages_desktop:
 _packages_latex:
   all:
     - texlive
+    - texlive-xetex
+  CentOS:
+    - texlive-euenc
   Fedora:
     - texlive-beamertheme-metropolis
 

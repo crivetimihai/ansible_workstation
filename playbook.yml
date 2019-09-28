@@ -7,13 +7,12 @@
   roles:
     - role: baseline
     - role: packages
-    - role: anaconda
     - role: micro
     - role: pandoc
-    - role: cloudcli
     - role: profile
     - role: dotfiles
     - role: flatpak
     - role: pip
     - role: npm
     - role: secure
+

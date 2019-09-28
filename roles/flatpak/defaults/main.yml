@@ -13,3 +13,4 @@ flatpak_packages:
   - com.slack.Slack
   - com.wps.Office
   - com.skype.Client
+  - com.spotify.Client
