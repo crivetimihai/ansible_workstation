@@ -256,6 +256,8 @@ _packages_gui:
     - remmina
     - mediawriter
     - dconf-editor
+    - ghostwriter
+    - calibre
   Debian:
     - task-gnome-desktop
     - firefox-esr

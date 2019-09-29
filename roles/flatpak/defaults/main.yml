@@ -18,3 +18,4 @@ flatpak_packages:
   - com.skype.Client
   - com.spotify.Client
   - com.obsproject.Studio
+  - net.xmind.ZEN
