@@ -277,6 +277,7 @@ _packages_desktop:
     - transmission
     - pinta
     - mpv # rpmfusion
+    - libldac # bluetooth LADC codec
 
 # LaTeX packages
 _packages_latex:
