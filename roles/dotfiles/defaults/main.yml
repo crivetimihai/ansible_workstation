@@ -16,3 +16,5 @@ dotfiles_files:
 
 dotfiles_copy:
   - .zshrc.local
+  - .gitconfig
+  - .config

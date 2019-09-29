@@ -6,8 +6,8 @@
     name: flathub
     state: present
     flatpakrepo_url: "{{ item }}"
-    method: user
-  become: no
+    method: "{{ flatpak_method }}"
+  become: yes
   with_items:
     - "{{ flatpak_repos }}"
 
@@ -15,7 +15,7 @@
   flatpak:
     name: "{{ item }}"
     state: present
-    method: user
-  become: no
+    method: "{{ flatpak_method }}"
+  become: yes
   with_items:
     - "{{ flatpak_packages }}"

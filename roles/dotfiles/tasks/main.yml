@@ -54,7 +54,6 @@
   copy:
     src: "{{ dotfiles_path }}/{{ item }}"
     dest: "~/{{ item }}"
-    state: copy
     backup: yes
   become: no
   with_items: "{{ dotfiles_copy }}"

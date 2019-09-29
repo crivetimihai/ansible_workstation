@@ -1,6 +1,9 @@
 ---
 # defaults file for flatpak
 
+# Flatpak method: user or system
+flatpak_method: system
+
 # Flatpacks repos
 flatpak_repos:
   - https://dl.flathub.org/repo/flathub.flatpakrepo
@@ -14,3 +17,4 @@ flatpak_packages:
   - com.wps.Office
   - com.skype.Client
   - com.spotify.Client
+  - com.obsproject.Studio

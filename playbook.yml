@@ -1,18 +1,17 @@
 ---
-# ansible-playbook -i localhost, playbook.yml
+# ansible-playbook -i localhost, playbook.yml -e 'ansible_python_interpreter=/usr/bin/python3'
 
 - hosts: all
   connection: local
   gather_facts: yes
   roles:
-    - role: baseline
-    - role: packages
-    - role: micro
-    - role: pandoc
-    - role: profile
-    - role: dotfiles
-    - role: flatpak
-    - role: pip
-    - role: npm
-    - role: secure
-
+   - role: baseline
+   - role: packages
+   - role: micro
+   - role: pandoc
+   - role: profile
+   - role: dotfiles
+   - role: flatpak
+   - role: pip
+   - role: npm
+   - role: secure

@@ -9,6 +9,7 @@ _packages_remove:
     - abrt
   Fedora:
     - abrt
+    - fedora-chromium-config.noarch
   RedHat:
     - abrt
 
@@ -32,6 +33,7 @@ _packages_base:
     - zsh
     - ed
     - vim
+    - neovim
     - mc
     - aspell-en
     - tmux
@@ -59,10 +61,6 @@ _packages_base:
     - xz
     - tuned
     - lvm2
-    - vdo
-    - kmod-kvdo
-    - stratisd
-    - stratis-cli
     - tuned
   Debian:
     - xz-utils
@@ -251,12 +249,13 @@ _packages_gui:
     - "@^graphical-server-environment"
     - firewall-config
   Fedora:
-    - "@^gnome-desktop-environment"
+    - "@workstation-product-environment"
     - firewall-config
     - firefox
-    - kepassx2
+    - keepassx
     - remmina
     - mediawriter
+    - dconf-editor
   Debian:
     - task-gnome-desktop
     - firefox-esr
@@ -274,8 +273,8 @@ _packages_desktop:
     - powerline-fonts
     - flameshot
     - transmission
-    - obs-studio
-    - google-chrome-stable
+    - pinta
+    - mpv # rpmfusion
 
 # LaTeX packages
 _packages_latex:
@@ -286,6 +285,14 @@ _packages_latex:
     - texlive-euenc
   Fedora:
     - texlive-beamertheme-metropolis
+    - texmaker
+
+# Google packages
+_packages_google:
+  all:
+    - google-chrome-stable
+  Fedora:
+    - google-chrome-stable
 
 packages_remove: "{{ _packages_remove['all'] + ( _packages_remove[ansible_distribution] | default([]) ) }}"
 packages_prereq: "{{ _packages_prereq['all'] + ( _packages_prereq[ansible_distribution] | default([]) ) }}"
@@ -298,3 +305,4 @@ packages_devel: "{{ _packages_devel['all'] + ( _packages_devel[ansible_distribut
 packages_gui: "{{ _packages_gui['all'] + ( _packages_gui[ansible_distribution] | default([]) ) }}"
 packages_desktop: "{{ _packages_desktop['all'] + ( _packages_desktop[ansible_distribution] | default([]) ) }}"
 packages_latex: "{{ _packages_latex['all'] + ( _packages_latex[ansible_distribution] | default([]) ) }}"
+packages_google: "{{ _packages_google['all'] + ( _packages_google[ansible_distribution] | default([]) ) }}"
