@@ -83,6 +83,8 @@ _packages_tools:
     - iotop
     - mosh
     - lynis
+    - testdisk
+    - inotify-tools
   CentOS:
     - openscap
     - openscap-scanner
@@ -105,6 +107,7 @@ _packages_net:
     - net-tools
     - tcpdump
     - nethogs
+    - irssi
   CentOS:
     - bind-utils
     - nmap-ncat
@@ -289,6 +292,7 @@ _packages_latex:
   Fedora:
     - texlive-beamertheme-metropolis
     - texmaker
+    - texlive-frame
 
 # Google packages
 _packages_google:
