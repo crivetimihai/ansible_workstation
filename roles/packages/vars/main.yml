@@ -279,8 +279,8 @@ _packages_desktop:
     - flameshot
     - transmission
     - pinta
-    - mpv # rpmfusion
-    - libldac # bluetooth LADC codec
+    - mpv
+    - libldac
 
 # LaTeX packages
 _packages_latex:

@@ -8,3 +8,4 @@ npm_packages:
   - ssh-perf
   - prettier
   - align-yaml
+  - docsify-cli

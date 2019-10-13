@@ -29,8 +29,7 @@ Example
 ### Install the role:
 
 ```bash
-pip install --upgrade mazer
-mazer install crivetimihai.workstation
+ansible-galaxy collection install crivetimihai.workstation
 ```
 
 
