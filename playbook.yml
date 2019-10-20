@@ -5,13 +5,14 @@
   connection: local
   gather_facts: yes
   roles:
-   # - role: baseline
-   # - role: packages
-   # - role: micro
-   # - role: pandoc
-   # - role: profile
+    - role: hugo
+#   - role: baseline
+#   - role: packages
+#   - role: micro
+#   - role: pandoc
+#   - role: profile
    # - role: dotfiles
    # - role: flatpak
    # - role: pip
-   - role: npm
+   # - role: npm
    # - role: secure

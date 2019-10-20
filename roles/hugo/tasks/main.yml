@@ -1,0 +1,23 @@
+---
+# tasks file for hugo
+
+- name: download hugo
+  get_url:
+    url: " {{ hugo_url }}"
+    dest: /tmp/hugo.tar.gz
+    checksum: "sha256:{{ hugo_sha256 }}"
+
+- name: unpack hugo
+  unarchive:
+    src: /tmp/hugo.tar.gz
+    dest: /usr/local/bin
+    extra_opts:
+      - --wildcards
+      - 'hugo'
+    remote_src: yes
+  become: yes
+
+- name: delete hugo tarball
+  file:
+    path: /tmp/hugo.tar.gz
+    state: absent

@@ -1,0 +1,7 @@
+---
+# defaults file for hugo
+
+hugo_release: 0.58.3
+hugo_platform: Linux-64bit
+hugo_url: https://github.com/gohugoio/hugo/releases/download/v{{ hugo_release }}/hugo_{{ hugo_release }}_{{ hugo_platform }}.tar.gz
+hugo_sha256: 92aeeb64d4c392782cb55424dc2cc594a06ad5e1bc7e156480feab488ff7e774

@@ -1,14 +1,6 @@
 ---
 # vars file for pandoc
 
-# SSH service name
-_service_name:
-  default: pandoc
-  Debian: pandoc
-  Ubuntu: pandoc
-
-service_name: "{{ _service_name[ansible_distribution] | default(_service_name['default']) }}"
-
 # Packages to install
 _packages:
   all:
