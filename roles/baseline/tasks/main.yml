@@ -5,7 +5,7 @@
     that:
       - ( ansible_distribution == "RedHat" and ( ansible_distribution_major_version == '8' )
         ) or
-        ( ansible_distribution == "CentOS" and ( ansible_distribution_major_version == "7" )
+        ( ansible_distribution == "CentOS" and ( ansible_distribution_major_version >= "7" )
         ) or
         ( ansible_distribution == "Fedora" and ( ansible_distribution_major_version == "30" )
         ) or
@@ -16,3 +16,4 @@
 
 - include: epel.yml    # Include epel
 - include: pip.yml     # Install pip
+- include: hosts.yml   # Generate /etc/myhosts
