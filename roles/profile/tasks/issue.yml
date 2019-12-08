@@ -5,7 +5,7 @@
      state: directory
      owner: root
      group: root
-     mode: 0775
+     mode: "0775"
 
 - name: Setup /etc/issue.d/splash.issue from template
   template:

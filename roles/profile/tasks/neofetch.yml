@@ -5,7 +5,7 @@
      dest: /usr/local/bin/neofetch
      owner: root
      group: root
-     mode: 0755
+     mode: "0755"
   tags:
      - neofetch_get
 
@@ -15,6 +15,6 @@
      dest: /etc/profile.d/neo.sh
      owner: root
      group: root
-     mode: 0755
+     mode: "0755"
   tags:
      - neofetch_startup

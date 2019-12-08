@@ -6,13 +6,13 @@
   gather_facts: yes
   roles:
     - role: hugo
-#   - role: baseline
-#   - role: packages
-#   - role: micro
-#   - role: pandoc
-#   - role: profile
-   # - role: dotfiles
-   # - role: flatpak
-   # - role: pip
-   # - role: npm
-   # - role: secure
+    - role: baseline
+    - role: packages
+    - role: micro
+    - role: pandoc
+    - role: profile
+    - role: dotfiles
+    - role: flatpak
+    - role: pip
+    - role: npm
+    - role: secure
