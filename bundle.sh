@@ -6,6 +6,7 @@ set -e
 # Run lint
 yamllint roles/*
 ansible-lint roles/*
+ansible-playbook --syntax-check playbook.yml
 
 # Release
 my_release=$(mazer build | awk 'END{print $NF}')
