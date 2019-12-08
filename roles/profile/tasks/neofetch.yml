@@ -6,6 +6,7 @@
      owner: root
      group: root
      mode: "0755"
+  become: yes
   tags:
      - neofetch_get
 
@@ -16,5 +17,6 @@
      owner: root
      group: root
      mode: "0755"
+  become: yes
   tags:
      - neofetch_startup
